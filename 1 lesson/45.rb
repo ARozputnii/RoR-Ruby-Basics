@@ -3,4 +3,4 @@
 
 print arr = [1, -1, 3, 4, 5, -5, 44, 55, -100, 100]
 puts
-print a = arr.select{ |elem| elem > 0 }.max
+print a = arr.select{ |elem| elem > 0 }.min

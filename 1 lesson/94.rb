@@ -6,7 +6,7 @@ k = 2
 puts "k = #{k}"
 arr2 = arr.reject{ |el| el > k }
 if arr2 != arr
-p false
+  p false
 else
-p true
+  p true
 end

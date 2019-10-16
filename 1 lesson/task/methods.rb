@@ -151,7 +151,7 @@ def task44
 end
 def task45
   arr = [1, -1, 3, 4, 5, -5, 44, 55, -100, 100]
-  a = arr.select{ |elem| elem > 0 }.max
+  a = arr.select{ |elem| elem > 0 }.min
 end
 def task46
   arr = [1, -1, 3, 4, 5, -5, 44, 55, -100, 100]
@@ -211,7 +211,7 @@ def task65
 end
 def task66
   arr = [1, 2, 3, 4, 5, 32, 44, 55, 100]
-  arr.find_all{ |elem| elem.odd? } + arr.find_all{ |elem| elem.even? }
+  arr.find_all{ |elem| elem.even? } + arr.find_all{ |elem| elem.odd? }
 end
 def task77
 
@@ -235,21 +235,24 @@ end
 def task91
 arr = [1, 2, 3, 4, 5, 6]
 k = 2
-if arr.select{ |el| el < k}
-true
+  arr1 = arr.select{ |el| el < k}
+  arr3 = []
+if arr1 != arr3
+  puts true
 else
-false
+  puts false
 end
 end
 def task92
   arr = [1, 2, 3, 4, 5, 6]
   k = 2
-  arr.select{ |el| el > k }
-  if arr.select{ |el| el > k }
-  true
-  else
-  false
-  end
+  arr1 = arr.select{ |el| el > k}
+  arr3 = []
+if arr1 != arr3
+  puts true
+else
+  puts false
+end
 end
 def task93
   arr = [1, 2, 3, 4, 5, 6]
