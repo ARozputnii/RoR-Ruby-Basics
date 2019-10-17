@@ -173,7 +173,9 @@ def task49
   arr[0...min_arr].size
 end
 def task50
- 
+  arr = [1, -1, 3, 4, 5, -5, 44, 55, -100, 100]
+  max_arr = arr.index(arr.max)
+  arr[0...max_arr].size
 end
 def task51
   arr = [1, -1, 3, 4, 5, -5, 44, 55, -100, 100]
@@ -214,7 +216,9 @@ def task66
   arr.find_all{ |elem| elem.even? } + arr.find_all{ |elem| elem.odd? }
 end
 def task77
-
+  num, sum = 12.to_s, 0
+  num.split('').each{|e| sum += e.to_i}
+  sum.to_s
 end
 def task87
   arr = [1, 2, 3, 4, 5, 6]
@@ -238,9 +242,9 @@ k = 2
   arr1 = arr.select{ |el| el < k}
   arr3 = []
 if arr1 != arr3
-  puts true
+  true
 else
-  puts false
+  false
 end
 end
 def task92
@@ -249,9 +253,9 @@ def task92
   arr1 = arr.select{ |el| el > k}
   arr3 = []
 if arr1 != arr3
-  puts true
+  true
 else
-  puts false
+  false
 end
 end
 def task93

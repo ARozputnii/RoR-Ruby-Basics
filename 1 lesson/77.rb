@@ -1,7 +1,5 @@
 # Дано целое число. Найти сумму его цифр.
 
-arr = []
-a = gets.chomp
-arr << a
-p arr.split('').map(&:to_i)
-p arr.inject(:+)
+num, sum = gets.chomp, 0
+num.split('').each{|e| sum += e.to_i}
+puts sum.to_s
