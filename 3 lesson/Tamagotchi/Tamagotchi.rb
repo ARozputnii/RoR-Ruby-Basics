@@ -1,16 +1,18 @@
-# encoding: UTF-8
-require_relative 'method.rb'
+require 'puts_html'
+
+
 
 class Pets
+
  attr_reader :command
  def initialize(name)
- @name = name
- @hp = 100
- @hunger = 50
- @power = 50
- @mood = 50
- @arr = []
- @command = %w(feed play sleep walk help follow status wash training fleas quit)
+   @name = name
+   @hp = 100
+   @hunger = 50
+   @power = 50
+   @mood = 50
+   @arr = []
+   @command = %w(feed play sleep walk help follow status wash training fleas quit)
  end 
 
  # погодувать
@@ -100,13 +102,13 @@ class Pets
    p "Health: #{@hp}"
  end
 
-def wash
+  def wash
    p "Теперь ваш любимчик пахнет ромашками"
    @hunger = @hunger + rand(5...10)
    @mood = @mood + rand(0...5)
    @power = @power + rand(0...5)
  end
-def training
+  def training
    p "#{@name} хорошо поддается дрессировки . Ему нравится что ты придаешь ему внимание. Не забудь покормить его."
    @hunger = @hunger + rand(10...20)
    @mood = @mood + rand(20...35)
@@ -156,6 +158,15 @@ def training
      exit
    end
  end 
+
+      content = "<p>Health:  #{@hp}</p> 
+      <p>Indicator of hunger: #{@hunger}</p> 
+      <p>Indicator of power: #{@power}</p>
+      <p>Indicator of mood: #{@mood}</p>"
+
+        @file = Putshtml.new
+        @file.add_to_file( content, false)
+
 end
 
 #### MAIN
