@@ -1,4 +1,6 @@
 # encoding: UTF-8
+require_relative 'method.rb'
+
 class Pets
  attr_reader :command
  def initialize(name)
@@ -163,7 +165,8 @@ p " ____________Tamagotchi___________ "
 
 while true
  pets_list = %w(Cat Dog Putin)
- p "Пожалуйста, выберите себе животное (нажмите цифру)"
+ $string = "Пожалуйста, выберите себе животное (нажмите цифру)"
+ $puts_html
  pets_list.length.times {|a| p (a + 1).to_s + ' ' + pets_list[a]}
 
  chose_pet = gets.chomp.to_i
