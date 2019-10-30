@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ARozputnii/puts_html
-  revision: 7bcc0eec9dd69d2ac520c7ca4077c42d53692a7e
+  revision: 7ad196154dc08c3126424cbb6586af344dcad525
   branch: master
   specs:
     puts_html (0.1.0)

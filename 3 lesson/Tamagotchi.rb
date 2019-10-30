@@ -5,6 +5,7 @@ require 'puts_html'
 class Pets
 
  attr_reader :command
+
  def initialize(name)
    @name = name
    @hp = 100
@@ -126,28 +127,27 @@ class Pets
  @arr = %w(I wish you a good time when I will be your president, you will be my pet, I want to the sea, feed me, you are stupid but it's not bad, if I were a bird, you are good)
  def change_hp
    if @hunger.to_i > 100
+   		@hunger = 100
      @hp -= rand(10...20)
-     puts " #{@name} голоден"
-   elsif @hunger.to_i >120
-     @hp -= rand(20...50)
-      puts " #{@name} ну очень голоден покорми уже его , изверг"
-   elsif @hunger.to_i > 200
-     @hp -= rand(50...80)  
-     puts "Ваш любимчик злобно на Вас смотрит. Вы так и не покормили его."
+     puts " #{@name} ну очень голоден покорми уже его , изверг"
    elsif @hunger.to_i < 0
-
+		@hunger = 0
      @hp += rand(0...5)
      puts "Freeeesh meeeeaat "
      end
    if @mood.to_i > 100
+   	@mood = 100
     @hp += rand(0...5) 
    elsif @mood.to_i < 0
+   	@mood = 0
     @hp -= rand(1...5)
     puts "#{@name} имеет плохое настроение "
     end
    if @pover.to_i > 100
+   	@pover = 100
     @hp += rand(5...10) 
    elsif @pover.to_i < 0
+   	@pover = 0
     @hp -= rand(5...10) 
     puts "#{@name} чувствует себя очень хорошо"
     end
@@ -156,16 +156,19 @@ class Pets
      puts "Your pets dead"
      puts "Вы плохой хазяин, Гринпис уже едет за Вами."
      exit
-   end
- end 
 
+
+   end
+
+ 	  	bypass_html = false
       content = "<p>Health:  #{@hp}</p> 
       <p>Indicator of hunger: #{@hunger}</p> 
       <p>Indicator of power: #{@power}</p>
       <p>Indicator of mood: #{@mood}</p>"
 
-        @file = Putshtml.new
-        @file.add_to_file( content, false)
+      @f = Putshtml.new
+      @f.add_to_file(content, bypass_html)
+ end 
 
 end
 
@@ -215,37 +218,35 @@ while true
   my_pet.status
   puts "________________________________________"
     case command
-     when my_pet.command[0]
-     my_pet.feed
-     when my_pet.command[1]
-     my_pet.play
-     when my_pet.command[2]
-     my_pet.sleep
-     when my_pet.command[3]
-     my_pet.walk
-     when my_pet.command[4]
-     my_pet.help
-     when my_pet.command[5]
-     my_pet.follow
-     when my_pet.command[6]
-     my_pet.status
-     when my_pet.command[7]
-     my_pet.wash
-     when my_pet.command[8]
-     my_pet.training
-     when my_pet.command[9]
-     my_pet.fleas
-     when my_pet.command[10]
-     break
+	     when my_pet.command[0]
+	     my_pet.feed
+	     when my_pet.command[1]
+	     my_pet.play
+	     when my_pet.command[2]
+	     my_pet.sleep
+	     when my_pet.command[3]
+	     my_pet.walk
+	     when my_pet.command[4]
+	     my_pet.help
+	     when my_pet.command[5]
+	     my_pet.follow
+	     when my_pet.command[6]
+	     my_pet.status
+	     when my_pet.command[7]
+	     my_pet.wash
+	     when my_pet.command[8]
+	     my_pet.training
+	     when my_pet.command[9]
+	     my_pet.fleas
+	     when my_pet.command[10]
+	     break
     else
-     print "Некоректный ввод, повторите: "
+      print "Некоректный ввод, повторите: "
     end
-    my_pet.status
-  puts "________________________________________"
-   print 'Выберите следующую команду: '
-   
 
-
-   command = gets.chomp.downcase
+	  my_pet.status
+  	puts "________________________________________"	
+    print 'Выберите следующую команду: '
+    command = gets.chomp.downcase
   end
 end
