@@ -1,1 +1,18 @@
-<p>game</p>
+<h1><%= @name %></h1><br>
+
+<p>Выберите действе</p>
+
+<form action="/game" method="post">
+  <button name="feed">покормить</button>
+  <button name="play">поиграть</button>
+	<button name="sleep">отправить спать</button>
+	<button name="walk">прогулятся</button>
+	<button name="follow">Наблюдать за <%= @name %></button>
+	<button name="wash">помыть</button>
+	<button name="training">дрессировать</button>
+	<button name="fleas">вычесать блох</button>
+	<button name="quit"> сохранить и выйти </button>
+</form> <br>
+<p><%= $message %>
+	<p><%= "Health:  #{$hp} Голод: #{$hunger} Сила: #{$power} Настроение: #{$mood} "%></p>
+
