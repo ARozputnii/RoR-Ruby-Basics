@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'yaml'
 require_relative 'tamagotchi.rb'
 
 get '/' do
@@ -9,36 +10,49 @@ get '/' do
 end
 
 get '/change_pet' do
+	   
 	erb :change_pet
 end
 post '/change_pet' do
 	@name_pets = params[:name_pets]
+	$pets = Pets.new
 
 	erb :game
 end
 post '/game' do
-		@pets = Pets.new
 		
+
 		if params[:feed]
-			@pets.feed
+			$pets.feed
 		elsif params[:play]
-			@pets.play
+			$pets.play
 		elsif params[:sleep]
-			@pets.sleep
+			$pets.sleep
 		elsif params[:walk]
-			@pets.walk
+			$pets.walk
 		elsif params[:follow]
-			@pets.follow
+			$pets.follow
 		elsif params[:wash]
-			@pets.wash
+			$pets.wash
 		elsif params[:training]
-			@pets.training
+			$pets.training
 		elsif params[:fleas]
-			@pets.fleas
+			$pets.fleas
 		elsif params[:quit]
-			"Gameover"						
+			config = ["health" => "#{$hp}", 
+				"hunger" => "#{$hunger}",
+				"power" => "#{$power}",
+				"mood" => "#{$mood}"]
+				
+			File.open("data.yml", "w") { |file| file.write(config.to_yaml) }				
 		end
-		erb :game
+		if $hp > 0	
+			erb :game
+		else		
+
+			"gameover"
+		end	
+		
 end
 
 

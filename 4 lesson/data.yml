@@ -1,0 +1,5 @@
+---
+- health: '20'
+  hunger: '100'
+  power: '0'
+  mood: '0'
