@@ -1,10 +1,14 @@
 
-<form action="/change_pet" method="POST">
-<p>Пожалуйста, выберите себе животное .</p>
-<select  name="name_pets" class="form-control">
-  <option>Cat</option>
-  <option>Dog</option>
-  <option>Putin</option>
-</select> 
-<input type="submit">	
-</form>
+<div class="row ">
+  <div class="col-md-6 col-md-offset-3">
+  	<p class="change_p">Выберите себе животное .</p>
+		<form action="/change_pet" method="POST">
+		<select  name="name_pets" class="form-control">
+		  <option>Cat</option>
+		  <option>Dog</option>
+		  <option>Putin</option>
+		</select> 
+		<input type="submit" class="change_pet">
+		</form>
+	</div>
+</div>

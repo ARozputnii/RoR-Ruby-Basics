@@ -1,5 +1,6 @@
 ---
-- health: '20'
-  hunger: '100'
-  power: '0'
-  mood: '0'
+- name: Dog
+  health: 100
+  hunger: 69
+  power: 42
+  mood: 53

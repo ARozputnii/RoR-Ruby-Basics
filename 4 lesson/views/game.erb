@@ -1,18 +1,35 @@
-<h1><%= @name %></h1><br>
 
-<p>Выберите действе</p>
-
-<form action="/game" method="post">
-  <button name="feed">покормить</button>
-  <button name="play">поиграть</button>
-	<button name="sleep">отправить спать</button>
-	<button name="walk">прогулятся</button>
-	<button name="follow">Наблюдать за <%= @name %></button>
-	<button name="wash">помыть</button>
-	<button name="training">дрессировать</button>
-	<button name="fleas">вычесать блох</button>
-	<button name="quit"> сохранить и выйти </button>
-</form> <br>
-<p><%= $message %>
-	<p><%= "Health:  #{$hp} Голод: #{$hunger} Сила: #{$power} Настроение: #{$mood} "%></p>
-
+<div class="row ">
+  <div class="col-md-8 col-md-offset-2">
+  	<h4><%= "Pдоровье:  #{$hp} Голод: #{$hunger} Сила: #{$power} Настроение: #{$mood} "%></h4>
+	<h2><%= $message %></h2>
+	<h3>Выберите действе</h3>
+	</div>
+</div>
+	<form action="/game" method="post">
+		<div class="row">
+		  <div class="col-md-2 col-md-offset-2">	  <button class="b_game" name="feed">покормить</button>
+			 </div>
+		  <div class="col-md-2 "> 	  <button class="b_game" name="play">поиграть</button>
+				</div>
+		  <div class="col-md-2 "> 		<button class="b_game" name="follow">Наблюдать за <%= $name %></button>
+				</div>
+		  <div class="col-md-2 "> 		<button class="b_game" name="sleep">отправить спать</button>
+				</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-2 col-md-offset-2"> 		<button class="b_game" name="wash">помыть</button>
+				</div>
+		  <div class="col-md-2"> 		<button class="b_game" name="walk">прогулятся</button>
+				</div>
+		  <div class="col-md-2"> 		<button class="b_game" name="training">дрессировать <%= $name %></button>
+				</div>
+		  <div class="col-md-2"> 		<button class="b_game" name="fleas">вычесать блох</button>
+				</div>
+		</div>
+		<div class="row">
+			 <div class="col-md-4 col-md-offset-5"> 
+					<button class="b_game " name="quit"> сохранить и выйти </button>
+			</div>
+		</div>
+	</form> 
